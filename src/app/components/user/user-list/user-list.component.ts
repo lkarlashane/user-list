@@ -2,7 +2,7 @@ import { Component, OnInit, ViewChild } from '@angular/core';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { MatPaginator } from '@angular/material/paginator';
 import { MatTableDataSource } from '@angular/material/table';
-import { Observable } from 'rxjs';
+import { BehaviorSubject, Observable } from 'rxjs';
 import { Users } from 'src/app/models/users';
 import { UserListService } from 'src/app/services/user-list.service';
 
@@ -13,8 +13,8 @@ import { UserListService } from 'src/app/services/user-list.service';
 })
 export class UserListComponent implements OnInit {
   searchForm: FormGroup;
-  users: Users[] = [];
-  userList!: Observable<any>;
+  userList =  new BehaviorSubject<Users[]>([]);
+  userList$ = this.userList.asObservable();
   dataSource: any;
   @ViewChild(MatPaginator) paginator!: MatPaginator;
 
@@ -31,8 +31,8 @@ export class UserListComponent implements OnInit {
 
   getUserList() {
     this.userListService.getUserList().subscribe(res => {
-      this.users = res;
-      this.setupPagination(this.users);
+      this.userList.next(res);
+      this.setupPagination(res);
     })
   }
 
@@ -45,13 +45,13 @@ export class UserListComponent implements OnInit {
   onSearch() {
     const input = this.searchForm.get('search')?.value;
     this.userListService.getUserList().subscribe(res => {
-      this.users = res.filter(item => item.name.toLocaleLowerCase().includes(input.toLocaleLowerCase()))
+      this.userList.next(res.filter(item => item.name.toLocaleLowerCase().includes(input.toLocaleLowerCase())));
+      this.setupPagination(this.userList.value);
     })
-    // this.searchForm.reset(); 
   }
 
   clearSearch() {
-    this.searchForm.get('search')?.setValue('');
+    this.searchForm.reset();
     this.getUserList();
   }
 }
