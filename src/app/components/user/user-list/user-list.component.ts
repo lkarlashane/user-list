@@ -45,7 +45,7 @@ export class UserListComponent implements OnInit {
   onSearch() {
     const input = this.searchForm.get('search')?.value;
     this.userListService.getUserList().subscribe(res => {
-      this.userList.next(res.filter(item => item.name.toLocaleLowerCase().includes(input.toLocaleLowerCase())));
+      this.userList.next(res?.filter(item => item.name.toLocaleLowerCase().includes(input.toLocaleLowerCase())));
       this.setupPagination(this.userList.value);
     })
   }
