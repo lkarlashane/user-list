@@ -2,9 +2,25 @@
 
 This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 16.1.2.
 
+## Installation
+
+To install the necessary packages for this project, follow these steps:
+
+1. Make sure you have Node.js and npm installed on your machine. You can download them from [Node.js official website](https://nodejs.org/).
+
+2. Open a command prompt or terminal in the root directory of the project.
+
+3. Run the following command to install the required packages:
+
+`npm install`
+
 ## Development server
 
 Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The application will automatically reload if you change any of the source files.
+
+## Mock Server
+
+Run `npm run mock-server` for a dev server. Navigate to `http://localhost:3000/`. The application will automatically reload if you change any of the source files.
 
 ## Code scaffolding
 
