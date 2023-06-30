@@ -1,0 +1,74 @@
+{
+    "users": [
+        {
+            "name": "Luna",
+            "email": "luna@email.com",
+            "username": "@luna"
+        },
+        {
+            "name": "Lukie",
+            "email": "lukie@email.com",
+            "username": "@lukie"
+        },
+        {
+            "name": "Cat",
+            "email": "cat@email.com",
+            "username": "@cat"
+        },
+        {
+            "name": "Dog",
+            "email": "dog@email.com",
+            "username": "@dog"
+        },
+        {
+            "name": "Bird",
+            "email": "bird@email.com",
+            "username": "@bird"
+        },
+        {
+            "name": "Cow",
+            "email": "Cow@email.com",
+            "username": "@cow"
+        },
+        {
+            "name": "Sheep",
+            "email": "sheep@email.com",
+            "username": "@sheep"
+        },
+        {
+            "name": "Siamese",
+            "email": "siamese@email.com",
+            "username": "@siamese"
+        },
+        {
+            "name": "Persian",
+            "email": "persian@email.com",
+            "username": "@persian"
+        },
+        {
+            "name": "Bengal",
+            "email": "bengal@email.com",
+            "username": "@bengal"
+        },
+        {
+            "name": "Lion",
+            "email": "lion@email.com",
+            "username": "@lion"
+        },
+        {
+            "name": "Tiger",
+            "email": "tiger@email.com",
+            "username": "@tiger"
+        },
+        {
+            "name": "Panda",
+            "email": "panda@email.com",
+            "username": "@panda"
+        },
+        {
+            "name": "Monkey",
+            "email": "monkey@email.com",
+            "username": "@monkey"
+        }
+    ]
+}
